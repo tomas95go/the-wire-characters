@@ -1,0 +1,39 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(rel='apple-touch-icon' sizes='76x76' href='img/apple-icon.png')
+  link(rel='icon' type='image/png' href='img/favicon.png')
+  title= title
+  // Font
+  link(rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700')
+  // CSS Files
+  link#pagestyle(href='css/material-dashboard.css' rel='stylesheet')
+body.g-sidenav-show.bg-gray-200
+.main-content.position-relative.max-height-vh-100.h-100
+  .container-fluid.px-2.px-md-4
+    .page-header.min-height-300.border-radius-xl.mt-4(style="background-image: url('https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');")
+      span.mask.bg-gradient-primary.opacity-6
+    .card.card-body.mx-3.mx-md-4.mt-n6
+      .row
+        .row
+          .col-12.mt-4
+            .mb-5.ps-3
+              h6.mb-1 Projects
+              p.text-sm Architects design houses
+            .row
+              .col-xl-3.col-md-6.mb-xl-0.mb-4
+                .card.card-blog.card-plain
+                  .card-header.p-0.mt-n4.mx-3
+                    a.d-block.shadow-xl.border-radius-xl
+                      img.img-fluid.shadow.border-radius-xl(src='https://images.unsplash.com/photo-1606744824163-985d376605aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80' alt='img-blur-shadow')
+                  .card-body.p-3
+                    a(href='javascript:;')
+                      h5
+                        | Gothic
+                    p.mb-4.text-sm
+                      | Why would anyone pick blue over pink? Pink is obviously a better color.
+                    .d-flex.align-items-center.justify-content-between
+                      button.btn.btn-outline-primary.btn-sm.mb-0(type='button') View Project
+  script(src='js/core/popper.min.js')
+  script(src='js/core/bootstrap.min.js')
