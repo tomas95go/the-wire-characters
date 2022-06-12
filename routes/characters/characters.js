@@ -38,4 +38,13 @@ router.get(`/list`, (req, res) => {
   });
 });
 
+router.post(`/add`, (req, res) => {
+  characters.push(req.body);
+  res.status(200).json({
+    title: `Success!`,
+    message: `${req.body.name} was added to the list!`,
+    character: req.body,
+  });
+});
+
 module.exports = router;

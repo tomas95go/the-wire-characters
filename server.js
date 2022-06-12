@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 const BASE_URL = __dirname;
 const characters = require(`${BASE_URL}/routes/characters/characters`);
 
+app.use(express.json());
 app.use(express.static(path.join(BASE_URL, `/assets/`)));
 app.set(`view engine`, `pug`);
 

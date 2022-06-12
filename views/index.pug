@@ -4,12 +4,16 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
   link(rel='apple-touch-icon' sizes='76x76' href='img/apple-icon.png')
   link(rel='icon' type='image/png' href='img/favicon.png')
-  title 'The Wire Characters'
+  title The Wire Characters
   // Font
   link(rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700')
   // CSS Files
   link#pagestyle(href='css/material-dashboard.css' rel='stylesheet')
   link#pagestyle(href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css' rel='stylesheet')
+  // Material Icons
+  link(href='https://fonts.googleapis.com/icon?family=Material+Icons+Round' rel='stylesheet')
+  // Font Awesome Icons
+  script(src='https://kit.fontawesome.com/42d5adcbca.js' crossorigin='anonymous')
 body.g-sidenav-show.bg-gray-200
 .main-content.position-relative.max-height-vh-100.h-100
   .container-fluid.px-2.px-md-4
@@ -17,9 +21,29 @@ body.g-sidenav-show.bg-gray-200
       span.mask.bg-gradient-primary.opacity-6
     .card.card-body.mx-3.mx-md-4.mt-n6
       .row
+        .row.d-flex.justify-content-center
+          .col-6
+            form#new-character-form
+              .row.d-flex.justify-content-center
+                .col-md-4 
+                  .input-group.input-group-static.mb-4
+                    label.ms-0(for='select-new-character') Select new character
+                    select#select-new-character.form-control(name="select-new-character")
+                .col-md-4
+                  button.btn.bg-gradient-primary.w-100.my-3 Submit
         .row
           .col-12.mt-4
             .row#characters-container
+.position-fixed.bottom-1.end-1.z-index-2
+  #success-toast.toast.fade.p-2.bg-white(role='alert' aria-live='assertive' aria-atomic='true')
+    .toast-header.border-0
+      i.material-icons.text-success.me-2 check
+      span#success-toast-title.me-auto.font-weight-bold 
+      small.text-body 11 mins ago
+      i.fas.fa-times.text-md.ms-3.cursor-pointer(data-bs-dismiss='toast' aria-label='Close')
+    hr.horizontal.dark.m-0
+    .toast-body
+      span#success-toast-message
   script(src='js/core/popper.min.js')
   script(src='js/core/bootstrap.min.js')
   script(src='js/characters/characters.js')
