@@ -6,7 +6,14 @@ const reset = (content) => {
 
 const generateCardContainer = () => {
   const $cardContainer = document.createElement("div");
-  $cardContainer.classList.add(`col-xl-3`, `col-md-6`, `mb-xl-0`, `mb-4`);
+  $cardContainer.classList.add(
+    `col-xl-3`,
+    `col-md-6`,
+    `mb-xl-0`,
+    `mb-4`,
+    `animate__animated`,
+    `animate__fadeIn`
+  );
   return $cardContainer;
 };
 
@@ -80,9 +87,11 @@ const getCharacters = async () => {
   const { characters } = await response.json();
   setTimeout(() => {
     reset($charactersContainer);
-    characters.forEach((character) => {
-      const characterCard = createCharacterCard(character);
-      $charactersContainer.appendChild(characterCard);
+    characters.forEach((character, i) => {
+      setTimeout(() => {
+        const characterCard = createCharacterCard(character);
+        $charactersContainer.appendChild(characterCard);
+      }, i * 800);
     });
   }, 3000);
 };
